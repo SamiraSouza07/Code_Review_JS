@@ -1,4 +1,6 @@
+//ul html
 const lista = document.getElementsByTagName("ul")[0];
+//lista js
 const listaTerefas = [];
 setTimeout(() => {
   menu();
@@ -39,6 +41,7 @@ function menu() {
     }, 500);
   }
 }
+
 //função para adicionar tarefa
 function adcTarefa() {
   const tarefa = window.prompt(`adc-Digite a descrição da tarefa`).trim();
@@ -59,6 +62,7 @@ function adcTarefa() {
     adcTarefa();
   }
 }
+
 //função para concluir tarefa
 function cclTarefa() {
   //pedindo a tarefa para o usuário
@@ -91,6 +95,7 @@ function cclTarefa() {
     cclTarefa();
   }
 }
+
 //função para editar a tarefa
 function edtTarefa() {
   //pedindo a tarefa para o usuário
@@ -111,6 +116,7 @@ function edtTarefa() {
     edtTarefa();
   }
 }
+
 //função para retirar a tarefa
 function rtrTarefa() {
   //pedindo a tarefa para o usuário
