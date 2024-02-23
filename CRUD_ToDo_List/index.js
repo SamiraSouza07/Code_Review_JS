@@ -1,4 +1,3 @@
-//referencia para a lista não ordenada
 const lista = document.getElementsByTagName("ul")[0];
 const listaTerefas = [];
 setTimeout(() => {
