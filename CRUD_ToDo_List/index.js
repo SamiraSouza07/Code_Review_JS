@@ -17,28 +17,33 @@ function menu() {
     `
     )
     .trim();
-  if (escolha == 0) {
-    return;
-  } else if (escolha == 1) {
-    adcTarefa();
-    setTimeout(() => {
-      menu();
-    }, 500);
-  } else if (escolha == 2) {
-    cclTarefa();
-    setTimeout(() => {
-      menu();
-    }, 500);
-  } else if (escolha == 3) {
-    edtTarefa();
-    setTimeout(() => {
-      menu();
-    }, 500);
-  } else if (escolha == 4) {
-    rtrTarefa();
-    setTimeout(() => {
-      menu();
-    }, 500);
+  switch (escolha) {
+    case 1:
+      adcTarefa();
+      setTimeout(() => {
+        menu();
+      }, 500);
+      break;
+    case 2:
+      cclTarefa();
+      setTimeout(() => {
+        menu();
+      }, 500);
+
+    case 3:
+      edtTarefa();
+      setTimeout(() => {
+        menu();
+      }, 500);
+
+    case 4:
+      rtrTarefa();
+      setTimeout(() => {
+        menu();
+      }, 500);
+    default:
+      return;
+      break;
   }
 }
 
