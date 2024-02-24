@@ -1,5 +1,6 @@
-//referencia para a lista não ordenada
+//ul html
 const lista = document.getElementsByTagName("ul")[0];
+//lista js
 const listaTerefas = [];
 setTimeout(() => {
   menu();
@@ -16,33 +17,39 @@ function menu() {
     `
     )
     .trim();
-  if (escolha == 0) {
-    return;
-  } else if (escolha == 1) {
-    adcTarefa();
-    setTimeout(() => {
-      menu();
-    }, 500);
-  } else if (escolha == 2) {
-    cclTarefa();
-    setTimeout(() => {
-      menu();
-    }, 500);
-  } else if (escolha == 3) {
-    edtTarefa();
-    setTimeout(() => {
-      menu();
-    }, 500);
-  } else if (escolha == 4) {
-    rtrTarefa();
-    setTimeout(() => {
-      menu();
-    }, 500);
+  switch (escolha) {
+    case 1:
+      adcTarefa();
+      setTimeout(() => {
+        menu();
+      }, 500);
+      break;
+    case 2:
+      cclTarefa();
+      setTimeout(() => {
+        menu();
+      }, 500);
+
+    case 3:
+      edtTarefa();
+      setTimeout(() => {
+        menu();
+      }, 500);
+
+    case 4:
+      rtrTarefa();
+      setTimeout(() => {
+        menu();
+      }, 500);
+    default:
+      return;
+      break;
   }
 }
 
+//função para adicionar tarefa
 function adcTarefa() {
-  let tarefa = window.prompt(`adc-Digite a descrição da tarefa`).trim();
+  const tarefa = window.prompt(`adc-Digite a descrição da tarefa`).trim();
   //Criando o li
   const li = document.createElement("li");
 
@@ -61,9 +68,10 @@ function adcTarefa() {
   }
 }
 
+//função para concluir tarefa
 function cclTarefa() {
   //pedindo a tarefa para o usuário
-  let tarefa = window.prompt("ccl-Digite a tarefa a ser concluida").trim();
+  const tarefa = window.prompt("ccl-Digite a tarefa a ser concluida").trim();
 
   //percorrendo a lista de nós
   for (let i = 0; i < listaTerefas.length; i++) {
@@ -93,9 +101,10 @@ function cclTarefa() {
   }
 }
 
+//função para editar a tarefa
 function edtTarefa() {
   //pedindo a tarefa para o usuário
-  let tarefa = window.prompt("edt-Digite a tarefa a ser editada").trim();
+  const tarefa = window.prompt("edt-Digite a tarefa a ser editada").trim();
   //percorrendo a lista de nós
   for (let i = 0; i < listaTerefas.length; i++) {
     if (listaTerefas[i].innerText == tarefa) {
@@ -113,6 +122,7 @@ function edtTarefa() {
   }
 }
 
+//função para retirar a tarefa
 function rtrTarefa() {
   //pedindo a tarefa para o usuário
   const tarefa = window.prompt("rtr-Digite a tarefa a ser retirada").trim();
